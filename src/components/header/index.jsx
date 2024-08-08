@@ -7,7 +7,7 @@ import { Communication } from '../communication'
 
 export const Header = () => {
   return (
-    <header className='flex justify-between items-center  h-20 px-16'>
+    <header className='flex justify-between items-center  h-20 px-16 xl:px-5'>
         <Logo />
         <nav className='flex justify-between'>
           <NavItem text='О компании'/>
@@ -16,7 +16,7 @@ export const Header = () => {
           </NavItem>
           <NavItem text='Контакты'/>
         </nav>
-        <Communication isFlexRow={true} isPhoneIconBlack={true} isMailIconBlack={true}/>
+        <Communication isFlexRow={true} isPhoneIconBlack={true} isMailIconBlack={true} isHeader={true}/>
     </header>
   )
 }

@@ -12,45 +12,45 @@ export const Footer = () => {
             <div className='flex items-start flex-col justify-around'>
                 <Logo isWhite={true}/>
                 <div className='flex flex-col'>
-                    <a href="#top" className='mb-5 hover:opacity-60 text-left'>Политика конфиденциальности</a>
-                    <a href="#top" className='mb-5 hover:opacity-60 text-left'>Пользовательское соглашение</a>
+                    <a href="#top" className='mb-5 hover:opacity-60 text-left m:text-xs'>Политика конфиденциальности</a>
+                    <a href="#top" className='mb-5 hover:opacity-60 text-left m:text-xs'>Пользовательское соглашение</a>
                 </div>
-                <span className='text-left'>© 2024 Все права защищены. <br/> ООО «Центр-АТ»</span>
+                <span className='text-left opacity-50 m:text-xs'>© 2024 Все права защищены. <br/> ООО «Центр-АТ»</span>
             </div>
-            <div class="footer__item">
-                <ul className='flex text-left flex-col justify-between'>
+            <div>
+                <ul className='flex text-left flex-col justify-between m:text-sm'>
                     <p className='mb-5'>Компания</p>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" class="footer__link">О компании</a>
+                        <a href="#top" >О компании</a>
                     </li>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" class="footer__link">Продукты</a>
+                        <a href="#top" >Продукты</a>
                     </li>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" class="footer__link">Новости</a>
+                        <a href="#top" >Новости</a>
                     </li>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" class="footer__link">Контакты</a>
+                        <a href="#top" >Контакты</a>
                     </li>
                 </ul>
             </div>
-            <div class="footer__item">
-                <ul className='flex text-left flex-col justify-between'>
+            <div>
+                <ul className='flex text-left flex-col justify-between m:text-sm'>
                     <p className='mb-5'>Продукты</p>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" class="footer__link">Производство «под ключ»</a>
+                        <a href="#top" >Производство «под ключ»</a>
                     </li>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" class="footer__link">Инжиниринг «под ключ»</a>
+                        <a href="#top" >Инжиниринг «под ключ»</a>
                     </li>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" class="footer__link">Атомизатор VIGA</a>
+                        <a href="#top" >Атомизатор VIGA</a>
                     </li>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" class="footer__link">Атомизатор PREP</a>
+                        <a href="#top" >Атомизатор PREP</a>
                     </li>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" class="footer__link">Атомизатор EIGA</a>
+                        <a href="#top" >Атомизатор EIGA</a>
                     </li>
                 </ul>
             </div>

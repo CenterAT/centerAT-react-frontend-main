@@ -9,7 +9,7 @@ export const NavItem = ({ text = '', children }) => {
     <div className='relative p-7 hover:bg-mainGrayHover'>
       <div className='flex items-center'>
         <span 
-          className='text-base font-normal text-black cursor-pointer hover:text-mainBlue'
+          className='text-base font-normal text-black cursor-pointer hover:text-mainBlue m:text-sm'
           onClick={() => children && setSelected(text !== selected ? text : '')}
         >
           { text }

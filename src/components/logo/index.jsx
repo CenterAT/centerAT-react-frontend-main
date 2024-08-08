@@ -6,6 +6,6 @@ export const Logo = ({
   isWhite = false
 }) => {
   return (
-    <a href="/#" className={`text-3xl font-bold ${isWhite && textWhite} hover:text-mainBlue`}>Центр-АТ</a>
+    <a href="/#" className={`text-3xl font-bold ${isWhite && textWhite} hover:text-mainBlue m:text-2xl`}>Центр-АТ</a>
   )
 }

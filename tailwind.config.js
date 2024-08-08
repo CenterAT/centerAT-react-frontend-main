@@ -5,11 +5,12 @@ module.exports = {
   ],
   theme: {
     screens: {
-      '2xl': '1440px',
-      'xl': '1280px',
-      'lg': '1024px',
-      'sm': '640px',
-      'md': '768px'
+      '2xl': {'max': '1440px'},
+      'xl': {'max': '1280px'},
+      'lg': {'max': '1024px'},
+      'md': {'max': '940px'},
+      'm': {'max': '768px'},
+      'sm': {'max': '640px'},
     },
     fontFamily: {
       'Jost': ['Jost'],
