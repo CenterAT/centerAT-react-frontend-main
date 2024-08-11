@@ -6,10 +6,10 @@ export const NavItem = ({ text = '', children }) => {
   const [ selected, setSelected] = useState('');
 
   return (
-    <div className='relative p-7 hover:bg-mainGrayHover'>
-      <div className='flex items-center'>
+    <div className='relative p-7 hover:bg-mainGrayHover sm:p-0 sm:hover:bg-white sm:mb-10'>
+      <div className='flex flex-row items-center'>
         <span 
-          className='text-base font-normal text-black cursor-pointer hover:text-mainBlue'
+          className='text-base font-normal text-black cursor-pointer hover:text-mainBlue m:text-sm sm:text-2xl '
           onClick={() => children && setSelected(text !== selected ? text : '')}
         >
           { text }
