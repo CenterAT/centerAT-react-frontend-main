@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.313cf2aa.css",
-    "main.js": "/static/js/main.02024797.js",
+    "main.css": "/static/css/main.2d30e410.css",
+    "main.js": "/static/js/main.5b674f6c.js",
     "static/js/453.8f17b6ce.chunk.js": "/static/js/453.8f17b6ce.chunk.js",
     "static/media/brief-bg.png": "/static/media/brief-bg.9e9f9fcc0067d5699cb7.png",
     "static/media/news-image-3.png": "/static/media/news-image-3.986b9550ec56cfc28c39.png",
@@ -24,15 +24,17 @@
     "static/media/mail-icon.svg": "/static/media/mail-icon.49264069c7bea562ac6fdb3c56500668.svg",
     "static/media/mail-icon-black.svg": "/static/media/mail-icon-black.ace8a0e1dbd3ffcb711d1698543a9c28.svg",
     "static/media/time-icon-black.svg": "/static/media/time-icon-black.e8d82a9e15a4c04565bdf41e9bb1065a.svg",
+    "static/media/menu-icon.svg": "/static/media/menu-icon.55647ba2763fba9557cfa11c896f0423.svg",
+    "static/media/close-menu.svg": "/static/media/close-menu.299268135e101e233e1a6c3c11c1bdf3.svg",
     "index.html": "/index.html",
     "static/media/nav-arrow-up-icon.svg": "/static/media/nav-arrow-up-icon.bf18046b6cff0f9bdefded6c46f05000.svg",
     "static/media/nav-arrow-down-icon.svg": "/static/media/nav-arrow-down-icon.744ee47820cf3299cf80cb19e5b7daae.svg",
-    "main.313cf2aa.css.map": "/static/css/main.313cf2aa.css.map",
-    "main.02024797.js.map": "/static/js/main.02024797.js.map",
+    "main.2d30e410.css.map": "/static/css/main.2d30e410.css.map",
+    "main.5b674f6c.js.map": "/static/js/main.5b674f6c.js.map",
     "453.8f17b6ce.chunk.js.map": "/static/js/453.8f17b6ce.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.313cf2aa.css",
-    "static/js/main.02024797.js"
+    "static/css/main.2d30e410.css",
+    "static/js/main.5b674f6c.js"
   ]
 }
