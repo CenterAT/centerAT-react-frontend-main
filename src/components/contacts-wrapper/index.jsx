@@ -7,7 +7,7 @@ import { ReactComponent as TimeIcon} from '../../img/time-icon-black.svg'
 
 export const ContactsWrap = () => {
   return (
-    <div className='flex flex-col items-start justify-between m:px-10 m:grid m:grid-cols-2 m:grid-rows-3 m:gap-[30px]'>
+    <div className='flex flex-col items-start justify-between m:px-10 m:grid m:grid-cols-2 m:grid-rows-3 m:gap-[30px] sm:flex'>
         <h2 className='mb-8 font-Jost font-extrabold text-5xl lg:text-[40px] m:col-span-2 m:m-0 m:text-left'>Наши контакты</h2>
         <ContactsItem>
             <PhoneIconBlack className='fill-black' />

@@ -7,6 +7,6 @@ export const SectionTitle = ({
   isWhite = false
 }) => {
   return (
-    <h2 className={`mb-8 font-Jost font-extrabold text-5xl ${isWhite && fontWhite} lg:text-[40px]`}>{ children }</h2>
+    <h2 className={`mb-8 font-Jost font-extrabold text-5xl ${isWhite && fontWhite} lg:text-[40px] sm:text-[32px]`}>{ children }</h2>
   )
 }

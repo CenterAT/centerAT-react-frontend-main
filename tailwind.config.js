@@ -24,7 +24,8 @@ module.exports = {
         'mainBlue': 'hsla(175, 46%, 59%, 1)',
         'darkGray': 'hsla(0, 0%, 40%, 1)',
         'progressLight': 'hsla(0, 0%, 75%, 1)',
-        'progressDark': 'hsla(0, 0%, 10%, 1)'
+        'progressDark': 'hsla(0, 0%, 10%, 1)',
+        'mobileShadow': 'hsla(0, 0%, 0%, 0.3)'
       },
       backgroundImage: {
         'brief-bg': "url('/src/img/brief-bg.png')",
