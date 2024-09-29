@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '../button'
 
 export const Hero = () => {
+
+  const [quizActive, setQuizActive] = useState(true);
   return (
     <section className='py-24 flex flex-col items-center'>
             <h1 className='mb-5 font-Jost font-extrabold text-6xl md:text-5xl sm:max-w-[360px] sm:text-[40px]'>Аддитивные технологии</h1>

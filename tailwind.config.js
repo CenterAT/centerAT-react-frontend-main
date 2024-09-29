@@ -18,7 +18,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        'mainGray': 'hsla(0, 0%, 95%, 1)',
+        'mainDownloadGray': 'hsla(0, 0%, 95%, 1)',
+        'mainGray': 'hsla(0, 0%, 97%, 1)',
         'advGray': 'hsla(0, 0%, 40%, 0.2)',
         'mainGrayHover': 'hsla(0, 0%, 95%, 0.5)',
         'mainBlue': 'hsla(175, 46%, 59%, 1)',

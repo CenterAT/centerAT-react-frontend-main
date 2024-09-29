@@ -12,9 +12,9 @@ import NewsImageTwo from "../img/news-image-2.png"
 import NewsImageThree from "../img/news-image-3.png"
 
 export const PRODUCTS = [
-    {text: 'Атомизаторы'},
-    {text: 'Инжиниринг «под ключ»'},
-    {text: 'Производствао «под ключ»'}
+    {link: '/Atomizators', text: 'Атомизаторы'},
+    {link: '/Engineering', text: 'Инжиниринг «под ключ»'},
+    {link: '/Production', text: 'Производство «под ключ»'}
 ]
 export const ADVANTAGES = [
     {text: 'Импортозамещаем детали и оборудование', icon: <AdvIconGear />},
