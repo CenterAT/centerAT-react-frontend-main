@@ -15,7 +15,7 @@ export const MobileMenu = ({ isOpen = false}) => {
                     <NavMenu items={ PRODUCTS }/>
                 </NavItem>
                 <NavItem text='Новости' />
-                <NavItem text='Контакты'/>
+                <NavItem hre="/" text='Контакты'/>
                 <Communication 
                     isFlexCol={true} 
                     isMobileMenu={true}

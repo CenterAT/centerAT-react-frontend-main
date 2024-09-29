@@ -5,7 +5,7 @@ import { SectionWrapper } from '../section-wrapper'
 
 export const About = () => {
   return (
-    <section className='m-auto mb-10 py-16 px-5 max-w-[1320px] sm:px-0'>
+    <section className='m-auto mb-10 py-16 px-5 max-w-[1320px] sm:px-0' id='about'>
         <SectionTitle>О компании</SectionTitle>
         <SectionWrapper isGray={ true } isFlex={ false }>
             <h3 className='mb-8 text-center text-3xl xl:text-2xl sm:text-base'>Уважаемые коллеги!</h3>
