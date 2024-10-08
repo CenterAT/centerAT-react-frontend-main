@@ -10,7 +10,7 @@ export const Brief = () => {
           <SectionTitle isWhite={true}>Ищите техническое решение для производства?</SectionTitle>
           <SectionSubtitle isWhite={true}>Заполните небольшой бриф и мы с вами свяжемся!</SectionSubtitle>
         </div>
-        <Quiz />
+        <Quiz isHome={true}/>
     </section>
   )
 }

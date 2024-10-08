@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const blueBtnStyles = 'bg-mainBlue text-white hover:opacity-50 rounded'
 const blackBtnStyles = 'mt-8 bg-black text-white hover:opacity-50 rounded sm:w-[246px]'
@@ -13,10 +13,9 @@ export const Button = ({
     isBottom = false,
 }) => {
 
-  const [quizActive, setQuizActive] = useState(true);
 
   return (
-    <button onClick={() => setQuizActive(true)}
+    <button 
         className={`text-black py-5 font-bold text-xl h-[60px] w-[322px] border-2 border-transparent md:text-lg m:w-[274px] m:text-base
             ${isBlue && blueBtnStyles} 
             ${isBlack && blackBtnStyles}

@@ -7,8 +7,8 @@ import { Communication } from '../communication'
 export const Footer = () => {
   return (
     <div className='py-9 bg-black text-white'>
-
-<div className='flex flex-row justify-around sm:flex-col sm:items-center sm:gap-5'>
+{/* absolute left-0 bottom-0 w-full h-[305px] */}
+<div className=' flex flex-row justify-around sm:flex-col sm:items-center sm:gap-5'>
             <div className='flex items-start flex-col justify-around sm:items-center'>
                 <Logo isWhite={true}/>
                 <div className='flex flex-col '>

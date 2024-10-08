@@ -14,7 +14,8 @@ import { Eiga } from "./pages/EIGA";
 // import { ModalQuiz } from "./components/modal-quiz";
 
 function App() {
-  // const [quizActive, setQuizActive] = useState(true);
+
+  // const [modalActive, setModalActive] = useState(true);
 
   return (
     <>
@@ -31,9 +32,10 @@ function App() {
           <Route path="/viga" element={ <Viga />} />
           <Route path="/eiga" element={ <Eiga />} />
         </Routes>
-        {/* <ModalQuiz active={quizActive} setActive={setQuizActive} /> */}
         <Footer />
+
       </Wrapper>
+        {/* <ModalQuiz active={modalActive} setActive={setModalActive}/> */}
     </Router>
     </>
   );
