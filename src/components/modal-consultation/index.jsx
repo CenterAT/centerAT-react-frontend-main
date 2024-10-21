@@ -1,8 +1,8 @@
 import React from 'react'
-import { BriefingForm } from '../briefing-form'
 import { ReactComponent as CloseStepIcon } from '../../img/close-step-icon.svg';
+import { ConsultationForm } from '../consultation-form';
 
-export const ModalQuiz = ({
+export const ModalConsultation = ({
     active,
     setActive
 }) => {
@@ -13,8 +13,7 @@ export const ModalQuiz = ({
       >
         <div className='relative'>
         <button className='w-[35px] h-[35px] absolute top-10 right-10 z-50' onClick={() => setActive(false)}><CloseStepIcon /></button>
-          <BriefingForm />
-
+          <ConsultationForm />
         </div>
     </div>
   )

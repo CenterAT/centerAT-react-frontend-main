@@ -1,4 +1,5 @@
 import React from 'react'
+import { HeaderWhite } from "../../components/header-white/index"
 import { Hero } from "../../components/hero";
 import { About } from "../../components/about";
 import { Advantages } from "../../components/advantages";
@@ -10,13 +11,14 @@ import { Contacts } from "../../components/contacts/index";
 export const Home = () => {
   return (
         <>
+          <HeaderWhite />
             <Hero />
-            <About />
+            <About name='about'/>
             <Advantages />
             <Products />
             <Brief />
             <News />
-            <Contacts />
+            <Contacts name='contacts' />
         </>
   )
 }

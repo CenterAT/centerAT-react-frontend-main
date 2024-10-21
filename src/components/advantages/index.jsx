@@ -5,7 +5,7 @@ import { ADVANTAGES } from '../constants'
 
 export const Advantages = ({ items = [] }) => {
   return (
-    <section className='py-16'>
+    <section className='py-16 z-0'>
         <SectionTitle>Наши преимущества</SectionTitle>
         <AdvWrap items={ ADVANTAGES }/>
     </section>
