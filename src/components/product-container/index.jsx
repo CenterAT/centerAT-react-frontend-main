@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import { Button } from '../button'
 import { CrossLink } from '../cross-link'
 import { ModalQuiz } from '../modal-quiz'
+import { ModalConsultation } from '../modal-consultation'
 
 export const ProductContainer = ({ ProductImage, title, text, price, link, linkText }) => {
-    const [modalActive, setModalActive] = useState(false);
+    const [modalBriefActive, setModalBriefActive] = useState(false);
+    const [modalConsultationActive, setModalConsultationActive] = useState(false);
+
   return (
     <section className='m-auto mb-10 py-16 px-5 max-w-[1320px] md:flex-col md:px-5'>
     <div className='flex flex-row gap-20 mx-auto max-w-full justify-center py-8 sm:flex-col-reverse sm:px-5 sm:gap-5'> 
@@ -18,18 +21,20 @@ export const ProductContainer = ({ ProductImage, title, text, price, link, linkT
                 <span className='text-xl text-black'>{ text }</span>
             </div>
             <span className='text-2xl text-black font-bold'>{ price }</span>
-            <div className='flex gap-10 md:flex-col md:gap-5 sm:flex-row xs:flex-col'>
-
-                <div onClick={() => setModalActive(true)}>
-                    <Button isBlue={true}>Заполнить бриф</Button>
+            <div className='flex gap-10 xl:flex-col md:gap-5 xs:flex-col'>
+                <div onClick={() => setModalBriefActive(true)}>
+                  <Button isBlue={true}>Заполнить бриф</Button>
                 </div>
-                <Button isWhite={true}>Заказать консультацию</Button>
+                <div onClick={() => setModalConsultationActive(true)}>
+                  <Button isWhite={true}>Заказать консультацию</Button>
+                </div>
             </div>
         </div> 
     </div>
         <CrossLink text={linkText} link={ link } />
     <div className='z-40'>
-        <ModalQuiz active={modalActive} setActive={setModalActive}/>
+        <ModalQuiz active={modalBriefActive} setActive={setModalBriefActive}/>
+        <ModalConsultation active={modalConsultationActive} setActive={setModalConsultationActive}/>
     </div>
     </section>
   )
