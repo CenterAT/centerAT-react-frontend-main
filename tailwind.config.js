@@ -11,6 +11,7 @@ module.exports = {
       'md': {'max': '940px'},
       'm': {'max': '768px'},
       'sm': {'max': '640px'},
+      'xs': {'max': '580px'},
     },
     fontFamily: {
       'Jost': ['Jost'],

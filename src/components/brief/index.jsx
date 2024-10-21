@@ -1,7 +1,7 @@
 import React from 'react'
 import { SectionTitle } from '../section-title'
 import { SectionSubtitle } from '../section-subtitle'
-import { Quiz } from '../quiz'
+import { BriefingForm } from '../briefing-form'
 
 export const Brief = () => {
   return (
@@ -10,7 +10,7 @@ export const Brief = () => {
           <SectionTitle isWhite={true}>Ищите техническое решение для производства?</SectionTitle>
           <SectionSubtitle isWhite={true}>Заполните небольшой бриф и мы с вами свяжемся!</SectionSubtitle>
         </div>
-        <Quiz isHome={true}/>
+        <BriefingForm />
     </section>
   )
 }

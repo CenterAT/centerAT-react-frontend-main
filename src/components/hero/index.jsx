@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Button } from '../button'
 import { ModalQuiz } from '../modal-quiz'
-// import { BriefingForm } from '../briefing-form';
+import { ModalConsultation } from '../modal-consultation';
 
 export const Hero = () => {
-  const [modalActive, setModalActive] = useState(false);
+  const [modalBriefActive, setModalBriefActive] = useState(false);
+  const [modalConsultationActive, setModalConsultationActive] = useState(false);
 
   return (
     <section className='py-24 flex flex-col items-center relative'>
@@ -12,12 +13,17 @@ export const Hero = () => {
             <p className='text-2xl w-[870px] md:text-xl m:w-[721px] sm:text-sm sm:w-[300px]'>Создаем техническое решение</p>
             <p className='mb-14 text-2xl w-[870px] md:text-xl m:w-[721px] sm:w-[300px] sm:text-sm'>Организация производства порошковых материалов из металлических сплавов для промышленных 3D-принтеров</p>
             <div className='flex gap-10 sm:flex-col-reverse'>
-                <div onClick={() => setModalActive(true)}>
+                <div onClick={() => setModalBriefActive(true)}>
                   <Button isBlue={true}>Заполнить бриф</Button>
                 </div>
-                <Button isWhite={true}>Заказать консультацию</Button>
+                <div onClick={() => setModalConsultationActive(true)}>
+                  <Button isWhite={true}>Заказать консультацию</Button>
+                </div>
             </div>
-            <ModalQuiz active={modalActive} setActive={setModalActive}/>
+            <div className='z-40'>
+              <ModalQuiz active={modalBriefActive} setActive={setModalBriefActive}/>
+              <ModalConsultation active={modalConsultationActive} setActive={setModalConsultationActive}/>
+            </div>
     </section>
   )
 }

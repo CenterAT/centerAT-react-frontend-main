@@ -16,7 +16,7 @@ export const Button = ({
 
   return (
     <button 
-        className={`text-black py-5 font-bold text-xl h-[60px] w-[322px] border-2 border-transparent md:text-lg m:w-[274px] m:text-base
+        className={`text-black py-2 font-bold text-xl h-[60px] w-[322px] border-2 border-transparent md:text-lg m:w-[274px] m:text-base
             ${isBlue && blueBtnStyles} 
             ${isBlack && blackBtnStyles}
             ${isWhite && whiteBtnStyles}

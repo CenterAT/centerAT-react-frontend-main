@@ -4,10 +4,7 @@ import { ReactComponent as ValidIcon } from '../../img/valid-icon.svg';
 import { ReactComponent as InvalidIcon } from '../../img/invalid-icon.svg';
 import { ReactComponent as PreviousIcon } from '../../img/previous-step-arrow.svg';
 
-
-export const BriefingForm = ({ 
-    isProgressed = false 
-    }) => {
+export const BriefingForm = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const btnSelected = 'w-[160px] h-[59px] text-white bg-black font-bold text-lg rounded-sm'
     const btnNotSelected = 'w-[160px] h-[59px] bg-mainDownloadGray font-bold text-lg rounded-sm'
@@ -118,7 +115,7 @@ export const BriefingForm = ({
 
     const handleSubmit = () => {
         // Отправка данных на сервер
-        fetch('/submit-survey', {
+        fetch('/submit-brief', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -128,7 +125,8 @@ export const BriefingForm = ({
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
-            setIsModalOpen(false);
+            setIsModalOpen(false); 
+            // setIsModalOpen(true); // Открываем модальное окно после успешной отправки
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -136,12 +134,14 @@ export const BriefingForm = ({
     };
 
     return (
-        <div className='relative p-12 w-[580px] h-[694px] bg-white flex flex-col items-center justify-center rounded shadow-quiz
-        sm:relative sm:bottom-0 sm:w-full sm:p-5' 
+        <div className='relative p-12 w-[580px] min-h-[694px] bg-white flex flex-col items-center justify-center rounded shadow-quiz
+        sm:relative sm:bottom-0 sm:w-full sm:p-5 z-40' 
         onClick={e => e.stopPropagation()}>
                 <div>
                     {step > 1 && (
-                        <button className='w-[35px] h-[35px] absolute top-10 left-10' onClick={handlePreviousStep}><PreviousIcon /></button>
+                        <div>
+                            <button className='w-[35px] h-[35px] absolute top-10 left-10' onClick={handlePreviousStep}><PreviousIcon /></button>
+                        </div>
                     )}
                     {step === 1 && (
                         <div className='flex flex-col items-center'>
@@ -300,6 +300,7 @@ export const BriefingForm = ({
                         </div>
                     )}
                 </div>
+                {/* <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} /> */}
         </div>
     );
 };

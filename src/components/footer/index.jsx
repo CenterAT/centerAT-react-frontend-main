@@ -1,6 +1,7 @@
 import React from 'react'
 import { Logo } from '../logo'
 import { Communication } from '../communication'
+import { NavLink } from 'react-router-dom'
 // import PhoneIconWhite from '../../img/phone-icon.svg';
 // import MailIconWhite from '../../img/mail-icon.svg';
 
@@ -10,27 +11,29 @@ export const Footer = () => {
 {/* absolute left-0 bottom-0 w-full h-[305px] */}
 <div className=' flex flex-row justify-around sm:flex-col sm:items-center sm:gap-5'>
             <div className='flex items-start flex-col justify-around sm:items-center'>
+            <NavLink to="/">
                 <Logo isWhite={true}/>
+            </NavLink>
                 <div className='flex flex-col '>
-                    <a href="#top" className='mb-5 hover:opacity-60 text-left m:text-xs'>Политика конфиденциальности</a>
-                    <a href="#top" className='mb-5 hover:opacity-60 text-left m:text-xs'>Пользовательское соглашение</a>
+                    {/* <a href="#top" className='mb-5 hover:opacity-60 text-left m:text-xs'>Политика конфиденциальности</a>
+                    <a href="#top" className='mb-5 hover:opacity-60 text-left m:text-xs'>Пользовательское соглашение</a> */}
                 </div>
-                <span className='text-left opacity-50 m:text-xs'>© 2024 Все права защищены. <br/> ООО «Центр-АТ»</span>
+                <span className='text-left opacity-50 m:text-xs sm:mt-5'>© 2024 Все права защищены. <br/> ООО «Центр-АТ»</span>
             </div>
             <div>
                 <ul className='flex text-left flex-col justify-between m:text-sm sm:items-center'>
                     <p className='mb-5'>Компания</p>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" >О компании</a>
+                        <NavLink to={'/#about'} >О компании</NavLink>
                     </li>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" >Продукты</a>
+                        <NavLink to={'/Atomizators'}>Продукты</NavLink>
                     </li>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" >Новости</a>
+                        <NavLink to={'/#news'} >Новости</NavLink>
                     </li>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" >Контакты</a>
+                        <NavLink to={'/#contacts'} >Контакты</NavLink>
                     </li>
                 </ul>
             </div>
@@ -38,19 +41,19 @@ export const Footer = () => {
                 <ul className='flex text-left flex-col justify-between m:text-sm sm:items-center'>
                     <p className='mb-5'>Продукты</p>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" >Производство «под ключ»</a>
+                        <NavLink to={'/Production'} >Производство «под ключ»</NavLink>
                     </li>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" >Инжиниринг «под ключ»</a>
+                        <NavLink to={'/Engineering'} >Инжиниринг «под ключ»</NavLink>
                     </li>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" >Атомизатор VIGA</a>
+                        <NavLink to={'/viga'} >Атомизатор VIGA</NavLink>
                     </li>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" >Атомизатор PREP</a>
+                        <NavLink to={'/prep'} >Атомизатор PREP</NavLink>
                     </li>
                     <li className='mb-5 hover:opacity-60'>
-                        <a href="#top" >Атомизатор EIGA</a>
+                        <NavLink to={'/eiga'} >Атомизатор EIGA</NavLink>
                     </li>
                 </ul>
             </div>

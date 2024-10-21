@@ -13,14 +13,14 @@ app.post('/submit-survey', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'your-email@gmail.com',
-            pass: 'your-password',
+            user: 'njksadjas@gmail.com',
+            pass: 'sfdrers7',
         },
     });
 
     const mailOptions = {
         from: 'your-email@gmail.com',
-        to: 'recipient-email@example.com',
+        to: 'L9LLIKA@yandex.ru',
         subject: 'Survey Results',
         text: JSON.stringify(formData, null, 2),
     };

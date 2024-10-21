@@ -15,6 +15,7 @@ const flexCol = 'flex-col m:text-sm sm:items-center'
 const marginBottom = 'mb-5'
 const headerStyles = 'md:hidden'
 const headerMobileStyles = 'sm:hidden'
+const textBlackStyles = 'text-black'
 
 export const Communication = ({
   isPhoneIconBlack = false,
@@ -24,16 +25,17 @@ export const Communication = ({
   isFlexCol = false,
   isHeader = false,
   isMobileHeader = false,
+  isTextBlack =false
 }) => {
   return (
     <div className={`flex ${isFlexCol && flexCol} ${isMobileHeader && headerMobileStyles}`} >
-            <a href="tel:+79999999999" className={`mr-5 flex items-center ${isFlexCol && marginBottom} hover:text-mainBlue sm:mr-0 `}>
+            <a href="tel:+79997204349" className={`mr-5 flex items-center ${isFlexCol && marginBottom} hover:text-mainBlue sm:mr-0 `}>
                 <div className='mr-2'>
                   {isPhoneIconBlack && blackIcon}
                   {isPhoneIconWhite && whiteIcon}
                 </div>
-                <div className={`${isHeader && headerStyles}`}>
-                  +7 999 999-99-99
+                <div className={`${isHeader && headerStyles} ${isTextBlack ? textBlackStyles : 'text-white'}`}>
+                  +7(999)720 43-49
                 </div>
             </a>
             <a href="mailto:center-at@mail.ru" className='flex items-center hover:text-mainBlue'>
@@ -41,7 +43,7 @@ export const Communication = ({
                 {isMailIconBlack && blackMailIcon}
                 {isMailIconWhite && whiteMailIcon}
               </div>
-              <div className={`${isHeader && headerStyles}`}>
+              <div className={`${isHeader && headerStyles} ${isTextBlack ? textBlackStyles : 'text-white'}`}>
                 center-at@mail.ru
               </div>
             </a>

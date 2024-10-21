@@ -11,36 +11,37 @@ import { NavLink } from 'react-router-dom'
 
 const whiteBgStyles = 'bg-white text-black' 
 
-export const Header = ({
+export const HeaderWhite = ({
   isWhiteBg = false,
   }) => {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className={`flex justify-between items-center bg-black h-20 px-16 xl:px-5 ${isWhiteBg && whiteBgStyles}`}>
+    <header className={`flex justify-between items-center bg-white h-20 px-16 xl:px-5 ${isWhiteBg && whiteBgStyles}`}>
         <NavLink to="/">
-          <Logo isWhite={true} />
+          <Logo isWhite={false} />
         </NavLink>
-        <nav className='text-white flex justify-between sm:hidden'>
+        <nav className='text-black flex justify-between sm:hidden'>
             <NavItem text='О компании' link={'/#about'} />
             <NavItem text='Продукты'>
-              <NavMenu items={ PRODUCTS } isBgBlack={true}/>
+              <NavMenu items={ PRODUCTS }/>
             </NavItem>
             <NavItem text='Контакты' link={'/#contacts'}/>
         </nav>
         <Communication 
           isFlexRow={true} 
-          isPhoneIconWhite={true} 
-          isMailIconWhite={true} 
+          isPhoneIconBlack={true} 
+          isMailIconBlack={true} 
           isHeader={true}
           isMobileHeader={true}
+          isTextBlack={true}
         />
         <div 
           className='hidden sm:block '
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          { isMobileMenuOpen ? <CloseMenuIcon className=' relative z-30 fill-black hover:fill-mainBlue hover:cursor-pointer ' /> : <MenuIcon className='fill-white hover:fill-mainBlue hover:cursor-pointer'/> }
+          { isMobileMenuOpen ? <CloseMenuIcon className=' relative z-30 fill-black hover:fill-mainBlue hover:cursor-pointer ' /> : <MenuIcon className='fill-black hover:fill-mainBlue hover:cursor-pointer'/> }
         </div>
         <MobileMenu isOpen={isMobileMenuOpen}/>
     </header>

@@ -13,7 +13,7 @@ export const ContactsWrap = () => {
             <PhoneIconBlack className='fill-black' />
             <div className='flex flex-col text-left'>
                 <span className='font-normal text-base text-darkGray'>Телефон</span>
-                <a href="tel:+79999999999" className='font-normal text-xl text-black'>+7 999 999-99-99</a>
+                <a href="tel:+79997204349" className='font-normal text-xl text-black'>+7(999)720 43-49</a>
             </div>
         </ContactsItem>
         <ContactsItem>
