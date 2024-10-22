@@ -1,11 +1,11 @@
 import React from 'react'
 
-const textWhite = 'mb-5 textWhite'
+const textWhiteStyles = 'text-white'
 
 export const Logo = ({ 
   isWhite = false
 }) => {
   return (
-    <a href="/#" className={`text-3xl font-bold ${isWhite && textWhite} hover:text-mainBlue`}>Центр-АТ</a>
+    <div className={`text-3xl font-bold text-black ${isWhite && textWhiteStyles} hover:text-mainBlue m:text-2xl`}>Центр-АТ</div>
   )
 }

@@ -5,10 +5,10 @@ import { SectionWrapper } from '../section-wrapper'
 
 export const About = () => {
   return (
-    <section className='m-auto py-16 max-w-[1320px]'>
+    <section className='m-auto mb-10 py-16 px-5 max-w-[1320px] sm:px-0' id='about'>
         <SectionTitle>О компании</SectionTitle>
         <SectionWrapper isGray={ true } isFlex={ false }>
-            <h3 className='mb-8 text-center text-3xl'>Уважаемые коллеги!</h3>
+            <h3 className='mb-8 text-center text-3xl xl:text-2xl sm:text-base'>Уважаемые коллеги!</h3>
             <AboutItem>Рады приветствовать Вас на нашем сайте …</AboutItem>
             <AboutItem>
                 Наша команда, совместно со стратегическим партнером, 
@@ -16,7 +16,7 @@ export const About = () => {
                 порошка для авиационной промышленности в 2021 и 2022 годах на профессиональной 
                 основе предлагает рассмотреть три сценария совместной работы в области аддитивных технологий:
             </AboutItem>
-            <ul className='list-decimal list-inside text-left text-2xl'>
+            <ul className='list-decimal list-inside text-left text-2xl xl:text-xl sm:text-sm'>
                     <li className='mb-4'>Производство металлического порошка «под ключ»;</li>
                     <li className='mb-4'>Инжиниринг «под ключ»;</li>
                     <li className='mb-4'>Подбор оборудования (атомизаторы) под ваши критерии (ТЗ) «под ключ».</li>
@@ -51,7 +51,7 @@ export const About = () => {
             <AboutItem>Мы не продаем железо, мы создаем техническое решение!»</AboutItem>
             <AboutItem>Готовы к конструктивной работе!</AboutItem>
             <AboutItem>С уважением команда Центр АТ`</AboutItem>
-            <AboutItem isSign='true'>Центр AT</AboutItem>
+            <AboutItem isSign='true' >Центр AT</AboutItem>
         </SectionWrapper>
     </section>
   )

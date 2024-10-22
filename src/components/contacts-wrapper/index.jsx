@@ -1,5 +1,4 @@
 import React from 'react'
-import { SectionTitle } from '../section-title'
 import { ContactsItem } from '../contacts-item'
 import { ReactComponent as PhoneIconBlack } from '../../img/phone-icon-black.svg';
 import { ReactComponent as MailIconBlack } from '../../img/mail-icon-black.svg';
@@ -8,17 +7,17 @@ import { ReactComponent as TimeIcon} from '../../img/time-icon-black.svg'
 
 export const ContactsWrap = () => {
   return (
-    <div className='flex flex-col items-start justify-between'>
-        <SectionTitle>Наши контакты</SectionTitle>
+    <div className='flex flex-col items-start justify-between m:px-10 m:grid m:grid-cols-2 m:grid-rows-3 m:gap-[30px] sm:flex'>
+        <h2 className='mb-8 font-Jost font-extrabold text-5xl lg:text-[40px] m:col-span-2 m:m-0 m:text-left'>Наши контакты</h2>
         <ContactsItem>
-            <PhoneIconBlack />
+            <PhoneIconBlack className='fill-black' />
             <div className='flex flex-col text-left'>
                 <span className='font-normal text-base text-darkGray'>Телефон</span>
-                <a href="tel:+79999999999" className='font-normal text-xl text-black'>+7 999 999-99-99</a>
+                <a href="tel:+79997204349" className='font-normal text-xl text-black'>+7(999)720 43-49</a>
             </div>
         </ContactsItem>
         <ContactsItem>
-            <MailIconBlack />
+            <MailIconBlack className='fill-black'/>
             <div className='flex flex-col text-left'>
                 <span className='font-normal text-base text-darkGray'>Телефон</span>
                 <a href="mailto:center-at@mail.ru" className='font-normal text-xl text-black'>center-at@mail.ru</a>

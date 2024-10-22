@@ -5,11 +5,13 @@ module.exports = {
   ],
   theme: {
     screens: {
-      '2xl': '1440px',
-      'xl': '1280px',
-      'lg': '1024px',
-      'sm': '640px',
-      'md': '768px'
+      '2xl': {'max': '1440px'},
+      'xl': {'max': '1280px'},
+      'lg': {'max': '1024px'},
+      'md': {'max': '940px'},
+      'm': {'max': '768px'},
+      'sm': {'max': '640px'},
+      'xs': {'max': '580px'},
     },
     fontFamily: {
       'Jost': ['Jost'],
@@ -17,13 +19,16 @@ module.exports = {
     },
     extend: {
       colors: {
-        'mainGray': 'hsla(0, 0%, 95%, 1)',
+        'mainDownloadGray': 'hsla(0, 0%, 95%, 1)',
+        'mainGray': 'hsla(0, 0%, 97%, 1)',
         'advGray': 'hsla(0, 0%, 40%, 0.2)',
         'mainGrayHover': 'hsla(0, 0%, 95%, 0.5)',
         'mainBlue': 'hsla(175, 46%, 59%, 1)',
         'darkGray': 'hsla(0, 0%, 40%, 1)',
         'progressLight': 'hsla(0, 0%, 75%, 1)',
-        'progressDark': 'hsla(0, 0%, 10%, 1)'
+        'progressDark': 'hsla(0, 0%, 10%, 1)',
+        'mobileShadow': 'hsla(0, 0%, 0%, 0.3)',
+        'bgModal': 'rgba(0,0,0,0.4)'
       },
       backgroundImage: {
         'brief-bg': "url('/src/img/brief-bg.png')",

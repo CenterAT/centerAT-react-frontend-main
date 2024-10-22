@@ -9,6 +9,6 @@ export const SectionWrapper = ({
     isFlex = 'false'
 }) => {
   return (
-    <div className={`mx-auto py-8 px-12 max-w-7x ${isGray && grayBg} ${isFlex && flexRow}`}>{ children }</div>
+    <div className={`mx-auto py-8 px-12 max-w-7x ${isGray && grayBg} ${isFlex && flexRow} md:px-5`}>{ children }</div>
   )
 }

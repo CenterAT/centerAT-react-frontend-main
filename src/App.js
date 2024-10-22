@@ -1,27 +1,36 @@
-import { Wrapper } from "./components/wrapper";
-import { Header } from "./components/header";
-import { Hero } from "./components/hero";
-import { About } from "./components/about";
-import { Advantages } from "./components/advantages";
-import { Products } from "./components/products";
-import { News } from "./components/news";
-import { Brief } from "./components/brief";
-import { Contacts } from "./components/contacts";
-import { Footer } from "./components/footer";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { Wrapper } from "./components/wrapper/index"
+import { Home } from "./pages/home/index"
+import { Atomizators } from "./pages/atomizators/index"
+import { Footer } from "./components/footer/index"
+import { ProductionPage } from "./pages/productionPage";
+import { Engineering } from "./pages/engineering";
+import { Prep } from "./pages/PREP";
+import { Viga } from "./pages/VIGA";
+import { Eiga } from "./pages/EIGA";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 function App() {
+
   return (
-    <Wrapper>
-      <Header />
-      <Hero />
-      <About />
-      <Advantages />
-      <Products />
-      <Brief />
-      <News />
-      <Contacts />
-      <Footer />
-    </Wrapper>
+    <>
+    <Router>
+      <Wrapper>
+      <ScrollToTop />
+        <Routes>
+          <Route path="/" element={ <Home /> } />
+          <Route path="/atomizators" element={ <Atomizators /> } />
+          <Route path="/production" element={ <ProductionPage /> } />
+          <Route path="/engineering" element={ <Engineering />} />
+          <Route path="/prep" element={ <Prep />} />
+          <Route path="/viga" element={ <Viga />} />
+          <Route path="/eiga" element={ <Eiga />} />
+        </Routes>
+        <Footer />
+
+      </Wrapper>
+    </Router>
+    </>
   );
 }
 
