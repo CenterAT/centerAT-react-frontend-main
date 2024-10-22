@@ -11,7 +11,7 @@ const blackMailIcon = <MailIconBlack className='fill-black hover:fill-mainBlue'/
 const whiteMailIcon = <MailIconWhite className='fill-white hover:fill-mainBlue'/>
 
 // flex styles
-const flexCol = 'flex-col m:text-sm sm:items-center'
+const flexCol = 'flex-col m:text-sm sm:items-start'
 const marginBottom = 'mb-5'
 const headerStyles = 'md:hidden'
 const headerMobileStyles = 'sm:hidden'
