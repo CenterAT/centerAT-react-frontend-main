@@ -15,8 +15,8 @@ export const NavItem = ({ text = '', children, link  }) => {
         >
           { text }
         </a>
-        { children && selected !== text && <NavArrowDownIcon className='mx-2' fill='white'/> }
-        { children && selected === text && <NavArrowUpIcon className='mx-2' fill='white'/> }
+        { children && selected !== text && <NavArrowDownIcon className='mx-2' fill='black'/> }
+        { children && selected === text && <NavArrowUpIcon className='mx-2' fill='black'/> }
       </div>
       { selected && children }
     </div>

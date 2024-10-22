@@ -16,8 +16,8 @@ export const BriefingForm = () => {
         name: '',
         phone: '',
         email: '',
-        question2: '',
-        question2Additional: '',
+        question2: [],
+        question2Additional: [],
         question3: '',
         question4: '',
         question5: '',
@@ -25,8 +25,8 @@ export const BriefingForm = () => {
         question7: '',
     });
     const [selectedButton, setSelectedButton] = useState({
-        question2: '',
-        question2Additional: '',
+        question2: [],
+        question2Additional: [],
         question4: '',
         question5: '',
         question6: '',
@@ -54,7 +54,7 @@ export const BriefingForm = () => {
             });
             setIsValid(formData.name && validPhone && validEmail);
         } else if (step === 2) {
-            setIsValid(selectedButton.question2 !== '' && selectedButton.question2Additional !== '');
+            setIsValid(selectedButton.question2.length > 0 && selectedButton.question2Additional.length > 0);
         } else if (step === 3) {
             setValidationStatus({
                 name: null,
@@ -82,6 +82,18 @@ export const BriefingForm = () => {
 
     const handleButtonClick = (e) => {
         const { name, value } = e.target;
+        const currentSelected = selectedButton[name];
+        const updatedSelected = currentSelected.includes(value)
+            ? currentSelected.filter(item => item !== value)
+            : [...currentSelected, value];
+
+        setSelectedButton({ ...selectedButton, [name]: updatedSelected });
+        setFormData({ ...formData, [name]: updatedSelected });
+        validateForm();
+    };
+
+    const handleButtonClickAnother = (e) => {
+        const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
         setSelectedButton({ ...selectedButton, [name]: value });
         validateForm();
@@ -90,8 +102,8 @@ export const BriefingForm = () => {
     const handleNextStep = () => {
         setStep(step + 1);
         setSelectedButton({
-            question2: '',
-            question2Additional: '',
+            question2: [],
+            question2Additional: [],
             question4: '',
             question5: '',
             question6: '',
@@ -103,8 +115,8 @@ export const BriefingForm = () => {
     const handlePreviousStep = () => {
         setStep(step - 1);
         setSelectedButton({
-            question2: '',
-            question2Additional: '',
+            question2: [],
+            question2Additional: [],
             question4: '',
             question5: '',
             question6: '',
@@ -135,7 +147,8 @@ export const BriefingForm = () => {
 
     return (
         <div className='relative p-12 w-[580px] min-h-[694px] bg-white flex flex-col items-center justify-center rounded shadow-quiz
-        sm:relative sm:bottom-0 sm:w-full sm:p-5 z-40' 
+        m:w-screen m:h-screen
+        sm:relative sm:bottom-0 sm:p-5 z-40' 
         onClick={e => e.stopPropagation()}>
                 <div>
                     {step > 1 && (
@@ -196,14 +209,14 @@ export const BriefingForm = () => {
                                 
                             <p className='mt-5 text-xl sm:text-base'>Атомизаторы</p>
                             <div className='flex flex-row  justify-center items-center gap-4 mt-8'>
-                                <button name="question2" value="Option1" onClick={handleButtonClick} className={selectedButton.question2 === 'Option1' ? btnSelected : btnNotSelected}>PREP</button>
-                                <button name="question2" value="Option2" onClick={handleButtonClick} className={selectedButton.question2 === 'Option2' ? btnSelected : btnNotSelected}>VIGA</button>
-                                <button name="question2" value="Option3" onClick={handleButtonClick} className={selectedButton.question2 === 'Option3' ? btnSelected : btnNotSelected}>EIGA</button>
+                                <button name="question2" value="Option1" onClick={handleButtonClick} className={selectedButton.question2.includes('Option1') ? btnSelected : btnNotSelected}>PREP</button>
+                                <button name="question2" value="Option2" onClick={handleButtonClick} className={selectedButton.question2.includes('Option2') ? btnSelected : btnNotSelected}>VIGA</button>
+                                <button name="question2" value="Option3" onClick={handleButtonClick} className={selectedButton.question2.includes('Option3') ? btnSelected : btnNotSelected}>EIGA</button>
                             </div>
                             <p className='mt-5 text-xl sm:text-base'>«Под ключ»</p>
                             <div className='flex flex-row justify-center items-center gap-8 mt-8'>
-                                <button name="question2Additional" value="OptionA" onClick={handleButtonClick} className={selectedButton.question2Additional === 'OptionA' ? btnSelectedLg : btnNotSelectedLg}>Производство<br />«под ключ»</button>
-                                <button name="question2Additional" value="OptionB" onClick={handleButtonClick} className={selectedButton.question2Additional === 'OptionB' ? btnSelectedLg : btnNotSelectedLg}>Инжиниринг<br />полного цикла</button>
+                                <button name="question2Additional" value="OptionA" onClick={handleButtonClick} className={selectedButton.question2Additional.includes('OptionA') ? btnSelectedLg : btnNotSelectedLg}>Производство<br />«под ключ»</button>
+                                <button name="question2Additional" value="OptionB" onClick={handleButtonClick} className={selectedButton.question2Additional.includes('OptionB') ? btnSelectedLg : btnNotSelectedLg}>Инжиниринг<br />полного цикла</button>
                             </div>
                             <button onClick={handleNextStep} disabled={!isValid} className='mt-8 bg-black text-white disabled:bg-progressLight disabled:hover:opacity-100 disabled:cursor-pointer hover:opacity-50 rounded py-5 font-bold text-xl h-[60px] w-[322px] border-2 border-transparent md:text-lg m:w-[274px] m:text-base sm:w-[246px]'>Следующий шаг</button>
                         </div>
@@ -241,16 +254,16 @@ export const BriefingForm = () => {
                         </div>
                             <p className='Выберите вариант ответа'>Выберите вариант ответа</p>
                             <div className='flex flex-col  justify-center items-center gap-4 mt-8'>
-                                <button name="question4" value="Option1" onClick={handleButtonClick} className={selectedButton.question4 === 'Option1' ? btnSelectedLg : btnNotSelectedLg}>10 кг</button>
-                                <button name="question4" value="Option2" onClick={handleButtonClick} className={selectedButton.question4 === 'Option2' ? btnSelectedLg : btnNotSelectedLg}>50 кг</button>
-                                <button name="question4" value="Option3" onClick={handleButtonClick} className={selectedButton.question4 === 'Option3' ? btnSelectedLg : btnNotSelectedLg}>100 кг</button>
+                                <button name="question4" value="Option1" onClick={handleButtonClickAnother} className={selectedButton.question4 === 'Option1' ? btnSelectedLg : btnNotSelectedLg}>10 кг</button>
+                                <button name="question4" value="Option2" onClick={handleButtonClickAnother} className={selectedButton.question4 === 'Option2' ? btnSelectedLg : btnNotSelectedLg}>50 кг</button>
+                                <button name="question4" value="Option3" onClick={handleButtonClickAnother} className={selectedButton.question4 === 'Option3' ? btnSelectedLg : btnNotSelectedLg}>100 кг</button>
                             </div>
                             <button onClick={handleNextStep} disabled={!isValid} className='mt-8 bg-black text-white disabled:bg-progressLight disabled:hover:opacity-100 disabled:cursor-pointer hover:opacity-50 rounded py-5 font-bold text-xl h-[60px] w-[322px] border-2 border-transparent md:text-lg m:w-[274px] m:text-base sm:w-[246px]'>Следующий шаг</button>
                         </div>
                     )}
                     {step === 5 && (
                         <div className='flex flex-col items-center'>
-                        <h2 className='mb-10 text-3xl max-w-[360px] sm:text-2xl'>Ваше финансирование подтверждено или нужно подтвержать?</h2>
+                        <h2 className='mb-10 text-3xl max-w-[360px] sm:text-2xl'>Ваше финансирование подтверждено или нужно подтверждать?</h2>
                         <div className='mb-10 flex justify-center gap-3'>
                             <div className={`w-[60px] h-1 rounded-full bg-progressDark sm:w-[40px]`}></div>
                             <div className={`w-[60px] h-1 rounded-full bg-progressDark sm:w-[40px]`}></div>
@@ -262,15 +275,15 @@ export const BriefingForm = () => {
                             <p className='Выберите вариант ответа'>Выберите вариант ответа</p>
 
                             <div className='flex flex-col  justify-center items-center gap-4 mt-8'>
-                                <button name="question5" value="Option1" onClick={handleButtonClick} className={selectedButton.question5 === 'Option1' ? btnSelectedLg : btnNotSelectedLg}>Да</button>
-                                <button name="question5" value="Option2" onClick={handleButtonClick} className={selectedButton.question5 === 'Option2' ? btnSelectedLg : btnNotSelectedLg}>Нет</button>
+                                <button name="question5" value="Option1" onClick={handleButtonClickAnother} className={selectedButton.question5 === 'Option1' ? btnSelectedLg : btnNotSelectedLg}>Да</button>
+                                <button name="question5" value="Option2" onClick={handleButtonClickAnother} className={selectedButton.question5 === 'Option2' ? btnSelectedLg : btnNotSelectedLg}>Нет</button>
                             </div>
                             <button onClick={handleNextStep} disabled={!isValid} className='mt-8 bg-black text-white disabled:bg-progressLight disabled:hover:opacity-100 disabled:cursor-pointer hover:opacity-50 rounded py-5 font-bold text-xl h-[60px] w-[322px] border-2 border-transparent md:text-lg m:w-[274px] m:text-base sm:w-[246px]'>Следующий шаг</button>
                         </div>
                     )}
                     {step === 6 && (
                         <div className='flex flex-col items-center'>
-                        <h2 className='mb-10 text-3xl max-w-[360px] sm:text-2xl'>Ваша компания частная или государственная?</h2>
+                        <h2 className='mb-10 text-3xl max-w-[360px] sm:text-2xl'>Ваша компания частная или государственная?</h2>
                         <div className='mb-10 flex justify-center gap-3'>
                             <div className={`w-[60px] h-1 rounded-full bg-progressDark sm:w-[40px]`}></div>
                             <div className={`w-[60px] h-1 rounded-full bg-progressDark sm:w-[40px]`}></div>
@@ -282,8 +295,8 @@ export const BriefingForm = () => {
                             <p className='Выберите вариант ответа'>Выберите вариант ответа</p>
 
                             <div className='flex flex-col  justify-center items-center gap-4 mt-8'>
-                                <button name="question6" value="Option1" onClick={handleButtonClick} className={selectedButton.question6 === 'Option1' ? btnSelectedLg : btnNotSelectedLg}>Частная</button>
-                                <button name="question6" value="Option2" onClick={handleButtonClick} className={selectedButton.question6 === 'Option2' ? btnSelectedLg : btnNotSelectedLg}>Государственная</button>
+                                <button name="question6" value="Option1" onClick={handleButtonClickAnother} className={selectedButton.question6 === 'Option1' ? btnSelectedLg : btnNotSelectedLg}>Частная</button>
+                                <button name="question6" value="Option2" onClick={handleButtonClickAnother} className={selectedButton.question6 === 'Option2' ? btnSelectedLg : btnNotSelectedLg}>Государственная</button>
                             </div>
                             <button onClick={handleNextStep} disabled={!isValid} className='mt-8 bg-black text-white disabled:bg-progressLight disabled:hover:opacity-100 disabled:cursor-pointer hover:opacity-50 rounded py-5 font-bold text-xl h-[60px] w-[322px] border-2 border-transparent md:text-lg m:w-[274px] m:text-base sm:w-[246px]'>Следующий шаг</button>
                        
@@ -293,8 +306,8 @@ export const BriefingForm = () => {
                         <div className='flex flex-col items-center'>
                         <h2 className='mb-10 text-3xl max-w-[360px] sm:text-2xl'>Когда с вами связаться?</h2>
                             <div className='flex flex-col  justify-center items-center gap-4 mt-8'>
-                                <button name="question7" value="Option1" onClick={handleButtonClick} className={selectedButton.question7 === 'Option1' ? btnSelectedLg : btnNotSelectedLg}>Сейчас</button>
-                                <button name="question7" value="Option2" onClick={handleButtonClick} className={selectedButton.question7 === 'Option2' ? btnSelectedLg : btnNotSelectedLg}>В течение дня</button>
+                                <button name="question7" value="Option1" onClick={handleButtonClickAnother} className={selectedButton.question7 === 'Option1' ? btnSelectedLg : btnNotSelectedLg}>Сейчас</button>
+                                <button name="question7" value="Option2" onClick={handleButtonClickAnother} className={selectedButton.question7 === 'Option2' ? btnSelectedLg : btnNotSelectedLg}>В течение дня</button>
                             </div>
                             <button onClick={handleSubmit} disabled={!isValid} className='mt-8 bg-black text-white disabled:bg-progressLight disabled:hover:opacity-100 disabled:cursor-pointer hover:opacity-50 rounded py-5 font-bold text-xl h-[60px] w-[322px] border-2 border-transparent md:text-lg m:w-[274px] m:text-base sm:w-[246px]'>Завершить бриф</button>
                         </div>
