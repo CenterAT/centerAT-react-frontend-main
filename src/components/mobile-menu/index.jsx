@@ -4,17 +4,21 @@ import { PRODUCTS } from '../constants'
 import { NavMenu } from '../nav-menu'
 import { Communication } from '../communication'
 
-export const MobileMenu = ({ isOpen = false}) => {
+export const MobileMenu = ({ active, setActive}) => {
   return (
     <React.Fragment >
-        <d className={`absolute top-0 left-0 right-0 bg-mobileShadow z-10 min-h-[150vh] ${isOpen ? 'flex' : 'hidden'}`} />
-        <div className={`absolute top-0 right-0 w-[288px] bg-white z-20 min-h-[150vh] ${isOpen ? 'flex' : 'hidden'}`} >
-            <nav className='py-[93px] px-8'>
+        <div 
+            className={active ? 'flex' : 'hidden'}
+            onClick={() => setActive(false)}
+            >
+        <div className={`flex absolute top-0 left-0 right-0 bg-mobileShadow z-10 min-h-[150vh] `} />
+        <div className={`flex absolute top-0 right-0 w-[288px] bg-white z-20 min-h-[150vh] `} onClick={e => e.stopPropagation()} >
+            <nav className='py-[93px] px-8' onClick={() => setActive(false)}>
                 <NavItem text='О компании' link={'/#about'}  />
                 <NavItem text='Продукты'>
                     <NavMenu items={ PRODUCTS }/>
                 </NavItem>
-                <NavItem text='Новости' />
+                {/* <NavItem text='Новости' /> */}
                 <NavItem text='Контакты' link={'/#contacts'}/>
                 <Communication 
                     isFlexCol={true} 
@@ -24,6 +28,8 @@ export const MobileMenu = ({ isOpen = false}) => {
                     isTextBlack={true}
                 />
             </nav>
+        </div>
+
         </div>
     </React.Fragment>
   )

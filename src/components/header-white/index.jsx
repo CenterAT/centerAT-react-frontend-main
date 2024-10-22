@@ -15,10 +15,10 @@ export const HeaderWhite = ({
   isWhiteBg = false,
   }) => {
 
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [ menuActive, setMenuActive ] = useState(false);
 
   return (
-    <header className={`flex justify-between items-center bg-white h-20 px-16 xl:px-5 ${isWhiteBg && whiteBgStyles}`}>
+    <header className={`flex justify-between items-center bg-white h-20 px-16 xl:px-5 ${isWhiteBg && whiteBgStyles} sm:sticky sm:top-0 sm:z-40`}>
         <NavLink to="/">
           <Logo isWhite={false} />
         </NavLink>
@@ -39,11 +39,11 @@ export const HeaderWhite = ({
         />
         <div 
           className='hidden sm:block '
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          onClick={() => setMenuActive(!menuActive)}
         >
-          { isMobileMenuOpen ? <CloseMenuIcon className=' relative z-30 fill-black hover:fill-mainBlue hover:cursor-pointer ' /> : <MenuIcon className='fill-black hover:fill-mainBlue hover:cursor-pointer'/> }
+          { menuActive ? <CloseMenuIcon className='absolute right-5 top-5 z-30 fill-black hover:fill-mainBlue hover:cursor-pointer ' /> : <MenuIcon className='fill-black hover:fill-mainBlue hover:cursor-pointer'/> }
         </div>
-        <MobileMenu isOpen={isMobileMenuOpen}/>
+        <MobileMenu active={menuActive} setActive={setMenuActive}/>
     </header>
   )
 }

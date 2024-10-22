@@ -7,7 +7,12 @@ export const NavMenu = ({
   isBgBlack = false
 }) => {
   return (
-    <div className={`flex flex-col px-4 py-2 ${isBgBlack ? blackStyles : 'bg-white'} absolute top-20 right-0 w-60 space-y-2 z-30`}>
+    <div 
+      className={`flex flex-col px-4 py-2 
+      ${isBgBlack ? blackStyles : 'bg-white'} 
+      absolute top-20 right-0 w-60 space-y-2 z-30
+      sm:relative sm:top-0 sm:items-start
+      `}>
       { items.map(({ link, text }) => 
         <NavLink to={ link }>
           <span className='cursor-pointer hover:text-mainBlue'>{ text }</span>
