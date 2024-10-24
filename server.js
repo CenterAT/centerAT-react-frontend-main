@@ -1,25 +1,32 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');  // Import CORS
 const nodemailer = require('nodemailer');
 const app = express();
 const port = 3001;
 
 app.use(bodyParser.json());
 
-app.post('/submit-survey', (req, res) => {
+// Use CORS middleware
+app.use(cors({
+    origin: 'http://localhost:3000' // Allow requests from your React app
+}));
+
+app.post('/submit-brief', (req, res) => {
     const formData = req.body;
 
     // Настройка Nodemailer для отправки письма
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: 'smtp.ethereal.email',
+        port: 587,
         auth: {
-            user: 'njksadjas@gmail.com',
-            pass: 'sfdrers7',
-        },
+            user: 'joanie8@ethereal.email',
+            pass: 'PZXDbQVUCAQ1QRdd3R'
+        }
     });
 
     const mailOptions = {
-        from: 'your-email@gmail.com',
+        from: 'joanie8@ethereal.email',
         to: 'L9LLIKA@yandex.ru',
         subject: 'Survey Results',
         text: JSON.stringify(formData, null, 2),
@@ -28,10 +35,12 @@ app.post('/submit-survey', (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.log(error);
-            res.status(500).send('Error sending email');
+            // Возвращаем ошибку в формате JSON
+            res.status(500).json({ message: 'Error sending email', error: error.toString() }); 
         } else {
             console.log('Email sent: ' + info.response);
-            res.status(200).send('Email sent successfully');
+            // Возвращаем успешный ответ в формате JSON
+            res.status(200).json({ message: 'Email sent successfully', response: info.response });  
         }
     });
 });

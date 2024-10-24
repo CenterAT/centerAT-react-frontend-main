@@ -11,7 +11,7 @@ export const NavItem = ({ text = '', children, link  }) => {
       <div className='flex flex-row items-center'>
         <a href={link}
           className='text-base font-normal cursor-pointer hover:text-mainBlue m:text-sm sm:text-2xl '
-          onMouseOver={() => children && setSelected(text !== selected ? text : '')}
+          onClick={() => children && setSelected(text !== selected ? text : '')}
         >
           { text }
         </a>
