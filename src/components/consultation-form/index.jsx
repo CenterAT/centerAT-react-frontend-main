@@ -113,7 +113,7 @@ export const ConsultationForm = () => {
         };
     
         // Отправка данных на сервер
-        fetch('http://localhost:3001/submit-brief', {
+        fetch('/submit-brief', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

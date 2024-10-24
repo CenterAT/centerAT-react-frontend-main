@@ -143,7 +143,7 @@ export const BriefingForm = () => {
             'Когда с вами связаться?': formData.question7  // Последний вопрос
         };
         // Отправка данных на сервер
-        fetch('http://localhost:3001/submit-brief', {
+        fetch('/submit-brief', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
