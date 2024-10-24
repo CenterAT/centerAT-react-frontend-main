@@ -113,7 +113,7 @@ export const ConsultationForm = () => {
         };
     
         // Отправка данных на сервер
-        fetch('/submit-brief', {
+        fetch('https://api.centrat.ru/submit-brief', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

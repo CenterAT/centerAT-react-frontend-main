@@ -143,7 +143,7 @@ export const BriefingForm = () => {
             'Когда с вами связаться?': formData.question7  // Последний вопрос
         };
         // Отправка данных на сервер
-        fetch('/submit-brief', {
+        fetch('https://api.centrat.ru/submit-brief', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
