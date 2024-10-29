@@ -44,7 +44,7 @@ export const Communication = ({
                 {isMailIconWhite && whiteMailIcon}
               </div>
               <div className={`${isHeader && headerStyles} ${isTextBlack ? textBlackStyles : 'text-white'}`}>
-                info@centrat.ru
+                center-at@mail.ru
               </div>
             </a>
         </div>

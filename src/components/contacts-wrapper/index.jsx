@@ -2,7 +2,7 @@ import React from 'react'
 import { ContactsItem } from '../contacts-item'
 import { ReactComponent as PhoneIconBlack } from '../../img/phone-icon-black.svg';
 import { ReactComponent as MailIconBlack } from '../../img/mail-icon-black.svg';
-// import { ReactComponent as GeoIcon} from '../../img/geo-icon-black.svg'
+import { ReactComponent as GeoIcon} from '../../img/geo-icon-black.svg'
 import { ReactComponent as TimeIcon} from '../../img/time-icon-black.svg'
 
 export const ContactsWrap = () => {
@@ -20,10 +20,10 @@ export const ContactsWrap = () => {
             <MailIconBlack className='fill-black'/>
             <div className='flex flex-col text-left'>
                 <span className='font-normal text-base text-darkGray'>Телефон</span>
-                <a href="mailto:center-at@mail.ru" className='font-normal text-xl text-black'>info@centrat.ru</a>
+                <a href="mailto:center-at@mail.ru" className='font-normal text-xl text-black'>center-at@mail.ru</a>
             </div>
         </ContactsItem>
-        {/* <ContactsItem>
+        <ContactsItem>
             <GeoIcon />
             <div className='flex flex-col text-left'>
                 <span className='font-normal text-base text-darkGray'>Адрес</span>
@@ -31,7 +31,7 @@ export const ContactsWrap = () => {
                     125362, г.Москва, Cтроительный проезд 7А, корп.28
                 </a>
             </div>
-        </ContactsItem> */}
+        </ContactsItem>
         <ContactsItem>
             <TimeIcon />
             <div className='flex flex-col text-left'>

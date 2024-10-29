@@ -16,7 +16,7 @@ export const HeaderWhite = ({
   }) => {
 
   const [ menuActive, setMenuActive ] = useState(false);
-
+    console.log(menuActive)
   return (
     <header className={`flex justify-between items-center bg-white h-20 px-16 xl:px-5 ${isWhiteBg && whiteBgStyles} sm:sticky sm:top-0 sm:z-40`}>
         <NavLink to="/">

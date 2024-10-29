@@ -33,7 +33,7 @@ export const Production = () => {
     <CrossLink text='Инжиниринг «под ключ»' link={ '/Engineering' } />
     <div className='z-40'>
         <ModalQuiz active={modalBriefActive} setActive={setModalBriefActive}/>
-        <ModalConsultation active={modalConsultationActive} setActive={setModalConsultationActive}/>
+        {/*<ModalConsultation active={modalConsultationActive} setActive={setModalConsultationActive}/>*/}
     </div>
     </>
   )
