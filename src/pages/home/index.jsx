@@ -14,8 +14,8 @@ export const Home = () => {
           <HeaderWhite />
             <Hero />
             <About name='about'/>
-            <Advantages />
             <Products />
+            <Advantages />
             <Brief />
             <News />
             <Contacts name='contacts' />

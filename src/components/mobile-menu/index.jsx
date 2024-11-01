@@ -13,13 +13,13 @@ export const MobileMenu = ({ active, setActive}) => {
             >
         <div className={`flex absolute top-0 left-0 right-0 bg-mobileShadow z-10 min-h-[150vh] `} />
         <div className={`flex absolute top-0 right-0 w-[288px] bg-white z-20 min-h-[150vh] `} onClick={e => e.stopPropagation()} >
-            <nav className='py-[93px] px-8' onClick={() => setActive(false)}>
-                <NavItem text='О компании' link={'/#about'}  />
-                <NavItem text='Продукты'>
+            <nav className='py-[93px] px-8'>
+                <NavItem text='О компании' link={'/#about'} onClick={() => setActive(false)} />
+                <NavItem text='Продукты' onClick={() => setActive(false)}>
                     <NavMenu items={ PRODUCTS }/>
                 </NavItem>
                 {/* <NavItem text='Новости' /> */}
-                <NavItem text='Контакты' link={'/#contacts'}/>
+                <NavItem text='Контакты' link={'/#contacts'} onClick={() => setActive(false)}/>
                 <Communication 
                     isFlexCol={true} 
                     isMobileMenu={true}

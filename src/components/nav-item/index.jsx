@@ -11,12 +11,12 @@ export const NavItem = ({ text = '', children, link  }) => {
       <div className='flex flex-row items-center'>
         <a href={link}
           className='text-base font-normal cursor-pointer hover:text-mainBlue m:text-sm sm:text-2xl '
-          onMouseOver={() => children && setSelected(text !== selected ? text : '')}
+          onClick={() => children && setSelected(text !== selected ? text : '')}
         >
           { text }
         </a>
-        { children && selected !== text && <NavArrowDownIcon className='mx-2' fill='white'/> }
-        { children && selected === text && <NavArrowUpIcon className='mx-2' fill='white'/> }
+        { children && selected !== text && <NavArrowDownIcon className='mx-2' fill='black'/> }
+        { children && selected === text && <NavArrowUpIcon className='mx-2' fill='black'/> }
       </div>
       { selected && children }
     </div>
