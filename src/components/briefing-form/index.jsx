@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import InputMask from 'react-input-mask';
 import { ReactComponent as ValidIcon } from '../../img/valid-icon.svg';
 import { ReactComponent as InvalidIcon } from '../../img/invalid-icon.svg';
@@ -165,6 +165,24 @@ export const BriefingForm = () => {
             console.error('Error:', error);
         });
     };
+
+    useEffect(() => {
+        if(step === 1) {
+            validateForm();
+        }else if(step === 2) {
+            validateForm();
+        } else if(step === 3) {
+            validateForm();
+        } else if(step === 4) {
+            validateForm();
+        } else if(step === 5) {
+            validateForm();
+        } else if(step === 6) {
+            validateForm();
+        }else if(step === 7) {
+            validateForm();
+        }
+    }, [step, selectedButton, formData]);
 
     return (
         <div className='relative p-12 w-[580px] min-h-[694px] bg-white flex flex-col items-center justify-center rounded shadow-quiz

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import InputMask from 'react-input-mask';
 import { ReactComponent as ValidIcon } from '../../img/valid-icon.svg';
 import { ReactComponent as InvalidIcon } from '../../img/invalid-icon.svg';
@@ -135,6 +135,17 @@ export const ConsultationForm = () => {
             console.error('Error:', error);
         });
     };
+
+    useEffect(() => {
+        if(step === 1) {
+            validateForm();
+        }else if(step === 2) {
+            validateForm();
+        } else if(step === 3) {
+            validateForm();
+        } 
+    }, [step, selectedButton, formData]);
+
     
 
     return (
